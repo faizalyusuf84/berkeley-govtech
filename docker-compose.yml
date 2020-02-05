@@ -1,0 +1,18 @@
+version: "3.5"
+services:
+  webapp:
+    image: berkeley-gtech:latest
+    ports:
+      - "80:8080"
+    networks:
+      - webapp-net
+  #redis:
+  #  image:redis
+  #  ports:
+  #    - "5432:5432"
+  #  networks:
+  #    - webapp-net
+networks:
+  webapp-net:
+#volumes:
+#  redis-vol:
