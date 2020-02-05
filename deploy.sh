@@ -2,8 +2,8 @@
 
 set -eux pipefail
 
-#build jar file
-./mvnw clean install
+#build jar
+docker run --rm -v $PWD:/usr/src/mymaven -v m2maven:/root/.m2:rw -w /usr/src/mymaven maven:3.6-alpine mvn clean package
 
 #build docker image
 docker build -t berkeley-gtech .
